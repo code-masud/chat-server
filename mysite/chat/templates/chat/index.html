@@ -6,5 +6,10 @@
 </head>
 <body>
     <h3>Welcome</h3>
+    <ul>
+        {% for user in users %}
+        <li><a href="/chat/private/{{ user.username }}/" target="_blank">{{ user.username }}</a></li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
