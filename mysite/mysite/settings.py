@@ -33,6 +33,8 @@ ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(",")
 # Application definition
 
 INSTALLED_APPS = [
+    "allauth_ui",
+
     "daphne",
     'chat',
 
@@ -45,6 +47,9 @@ INSTALLED_APPS = [
 
     'allauth',
     'allauth.account',
+
+    "widget_tweaks",
+    "slippers",
 ]
 
 MIDDLEWARE = [
@@ -144,8 +149,11 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-LOGIN_URL = '/accounts/login/'
+LOGIN_URL = 'accounts/login/'
 LOGIN_REDIRECT = '/'
 
 LOGOUT_URL = '/accounts/logout/'
-LOGOUT_REDIRECT = '/accounts/login/'
+LOGOUT_REDIRECT = 'accounts/login/'
+
+# settings.py
+ALLAUTH_UI_THEME = "dark"

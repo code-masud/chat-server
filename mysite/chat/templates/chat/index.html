@@ -5,7 +5,9 @@
     <title>Chat Rooms</title>
 </head>
 <body>
-    <h3>Welcome</h3>
+    <h3>Welcome {{ request.user.username }}</h3>
+    <a href="/accounts/logout/">Logout</a>
+    <h5>Active Users</h5>
     <ul>
         {% for user in users %}
         <li><a href="/chat/private/{{ user.username }}/" target="_blank">{{ user.username }}</a></li>
